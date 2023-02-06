@@ -1,0 +1,19 @@
+<%- include('partials/header') -%>
+
+<h1>Home</h1>
+<% function truncate(str, maxlength) {    return (str.length > maxlength) ?   str.slice(0, maxlength - 1) + '…' : str;   } %>
+<p> <%= homeFirstContent %> </p>
+
+<% compose.forEach(function(posts){ %>
+    <div class="item">
+        <h1><%= posts.postTitle %></h1>
+        
+        <p><%= truncate(posts.postContent, 100) %>
+             <a href="/posts/<%=posts.postTitle%>">Read more</a>
+             </p>
+    </div>
+<%})  %>
+    
+
+<%- include('partials/footer') -%>
+
