@@ -6,14 +6,17 @@
 
 <% compose.forEach(function(posts){ %>
     <div class="item">
-        <h1><%= posts.postTitle %></h1>
+        <h1><%= posts.title %></h1>
         
-        <p><%= truncate(posts.postContent, 100) %>
-             <a href="/posts/<%=posts.postTitle%>">Read more</a>
+        <p><%= truncate(posts.text, 100) %>
+             <a href="/posts/<%=posts._id%>">Read more</a>
              </p>
     </div>
 <%})  %>
     
 
+<form action="/compose" method="get">
+    <button type="submit" class="btn btn-primary">Compose</button>
+</form>
 <%- include('partials/footer') -%>
 
